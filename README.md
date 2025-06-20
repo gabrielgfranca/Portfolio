@@ -1,16 +1,16 @@
-# personal_website
+# Personal Portfolio
 
-A new Flutter project.
+This is my personal portfolio website built with Flutter. It showcases my background, projects, and journey as a software developer.
 
-## Getting Started
+## 🌐 About the Website
+The website was created to present:
+- My professional profile and background
+- A selection of personal and academic projects
+- A clean, responsive layout using Flutter
 
-This project is a starting point for a Flutter application.
+### 🛠️ Built With
+  - Flutter — UI toolkit for building natively compiled applications
+  - Dart — Programming language used by Flutter
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+📸 Preview
+Coming soon...
