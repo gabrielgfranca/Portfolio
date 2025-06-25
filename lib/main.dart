@@ -25,27 +25,3 @@ class WebSite extends StatelessWidget {
     );
   }
 }
-
-class MainPage extends StatefulWidget {
-  const MainPage({super.key});
-
-  @override
-  State<MainPage> createState() => _MainPageState();
-}
-
-class _MainPageState extends State<MainPage> {
-  final Sections field = Sections();
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        field.rightColumn(),
-        const SizedBox(width: 20.0), // Spacing between columns
-        field.middleColumn(),
-        const SizedBox(width: 20.0), // Spacing between columns
-        field.leftColumn(),
-      ],
-    );
-  }
-}

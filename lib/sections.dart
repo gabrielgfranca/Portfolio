@@ -1,167 +1,120 @@
 import 'package:flutter/material.dart';
+import 'bluePrints.dart';
+import 'constants.dart';
 
-const cornerRadius = 20.0;
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
 
-class Sections {
-  Widget rightColumn() {
-    return Expanded(
-      flex: 1,
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.red,
-          borderRadius: BorderRadius.circular(20.0),
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          flex: 1,
+          child: BuildSection(
+            color: Colors.red,
+            child: [
+              const Text(
+                'Section 1',
+                style: TextStyle(color: Colors.white, fontSize: 24.0),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              'Column 1',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
+        const SizedBox(width: kPadding), // Spacing between columns
+        Expanded(
+          flex: 2,
+          child: Column(
+            children: [
+              Expanded(
+                flex: 1,
+                child: BuildSection(
+                  color: Colors.green,
+                  child: [
+                    const Text(
+                      'Section 2 - Part 1',
+                      style: TextStyle(color: Colors.white, fontSize: 24.0),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+
+              const SizedBox(height: 20.0), // Spacing between sections
+
+              Expanded(
+                flex: 3,
+                child: BuildSection(
+                  color: Colors.lightGreen,
+                  child: [
+                    const Text(
+                      'Section 2 - Part 2',
+                      style: TextStyle(color: Colors.white, fontSize: 24.0),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
-    );
-  }
-
-  Widget middleColumn() {
-    return Expanded(
-      flex: 2,
-      child: Column(
-        children: [
-          Expanded(
-            flex: 1,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.green,
-                borderRadius: BorderRadius.circular(cornerRadius),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    'Column 2 - Section One',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+        const SizedBox(width: kPadding), // Spacing between columns
+        Expanded(
+          flex: 1,
+          child: Column(
+            children: [
+              Expanded(
+                child: BuildSection(
+                  color: Colors.blue[300]!,
+                  child: [
+                    const Text(
+                      'Section 3 - Part 1',
+                      style: TextStyle(color: Colors.white, fontSize: 24.0),
+                      textAlign: TextAlign.center,
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ),
 
-          const SizedBox(height: 20.0), // Spacing between sections
+              const SizedBox(height: kPadding), // Spacing between sections
 
-          Expanded(
-            flex: 3,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.lightGreen,
-                borderRadius: BorderRadius.circular(cornerRadius),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    'Column 2 - Section Two',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+              Expanded(
+                child: BuildSection(
+                  color: Colors.blue[400]!,
+                  child: [
+                    const Text(
+                      'Section 3 - Part 2',
+                      style: TextStyle(color: Colors.white, fontSize: 24.0),
+                      textAlign: TextAlign.center,
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 
-  Widget leftColumn() {
-    return Expanded(
-      flex: 1,
-      child: Column(
-        children: [
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.blue[300],
-                borderRadius: BorderRadius.circular(cornerRadius),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Column 3 - Section One',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+              const SizedBox(height: kPadding), // Spacing between sections
+
+              Expanded(
+                child: BuildSection(
+                  color: Colors.blue[500]!,
+                  child: [
+                    const Text(
+                      'Section 3 - Part 3',
+                      style: TextStyle(color: Colors.white, fontSize: 24.0),
+                      textAlign: TextAlign.center,
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
+            ],
           ),
-
-          const SizedBox(height: 20.0), // Spacing between sections
-
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.blue[400],
-                borderRadius: BorderRadius.circular(cornerRadius),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    'Column 3 - Section Two',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-
-          const SizedBox(height: 20.0), // Spacing between sections
-
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.blue[500],
-                borderRadius: BorderRadius.circular(cornerRadius),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    'Column 3 - Section Three',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
