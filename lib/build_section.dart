@@ -22,6 +22,13 @@ class BuildSection extends StatelessWidget {
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(kCornerRadius),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.2),
+              blurRadius: 4.0,
+              offset: Offset(4, 4), // changes position of shadow
+            ),
+          ],
         ),
         child: Column(
           mainAxisAlignment: alignment,

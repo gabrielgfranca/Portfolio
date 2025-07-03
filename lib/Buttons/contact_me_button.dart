@@ -21,7 +21,7 @@ class ContactMeButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'C O N T A C T  M E !',
+            'C O N T A C T   M E !',
             style: GoogleFonts.poppins(
               fontSize: 18.0,
               fontWeight: FontWeight.w800,

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'build_section.dart';
 import 'constants.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'Buttons/contact_me_button.dart';
-import 'Buttons/round_icon_button.dart';
+import 'Sections/main_section.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -18,41 +16,7 @@ class _MainPageState extends State<MainPage> {
     return Row(
       children: [
         // Main Section
-        BuildSection(
-          color: kMainSectionPrimaryColor,
-          alignment: MainAxisAlignment.end,
-          child: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                RoundIconButton(
-                  onPressed: () {},
-                  icon: FontAwesomeIcons.linkedin,
-                  iconColor: kMainSectionTertiaryColor,
-                  color: kMainSectionSecondaryColor,
-                ),
-                const SizedBox(width: kPadding), // Spacing between buttons
-                RoundIconButton(
-                  onPressed: () {},
-                  icon: FontAwesomeIcons.github,
-                  iconColor: kMainSectionTertiaryColor,
-                  color: kMainSectionSecondaryColor,
-                ),
-                const SizedBox(width: kPadding), // Spacing between buttons
-                RoundIconButton(
-                  onPressed: () {},
-                  icon: FontAwesomeIcons.youtube,
-                  iconColor: kMainSectionTertiaryColor,
-                  color: kMainSectionSecondaryColor,
-                ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.all(24.0),
-              child: ContactMeButton(),
-            ),
-          ],
-        ),
+        MainSection(),
         const SizedBox(width: kPadding), // Spacing between columns
         Expanded(
           flex: 2,
@@ -61,7 +25,7 @@ class _MainPageState extends State<MainPage> {
               // Section 2 - DevTools
               BuildSection(
                 flex: 1,
-                color: Colors.green,
+                color: kSecondarySectionPrimaryColor,
                 child: [
                   const Text(
                     'Section 2 - Part 1',
@@ -75,7 +39,7 @@ class _MainPageState extends State<MainPage> {
               // Section 2 - Projects
               BuildSection(
                 flex: 3,
-                color: Colors.lightGreen,
+                color: kSecondarySectionPrimaryColor,
                 child: [
                   const Text(
                     'Section 2 - Part 2',
@@ -94,7 +58,7 @@ class _MainPageState extends State<MainPage> {
             children: [
               // Section 3 - Education
               BuildSection(
-                color: Colors.blue[300]!,
+                color: kSecondarySectionPrimaryColor,
                 child: [
                   const Text(
                     'Section 3 - Part 1',
@@ -107,7 +71,7 @@ class _MainPageState extends State<MainPage> {
               const SizedBox(height: kPadding), // Spacing between sections
               // Section 3 - Experience
               BuildSection(
-                color: Colors.blue[400]!,
+                color: kSecondarySectionPrimaryColor,
                 child: [
                   const Text(
                     'Section 3 - Part 2',
@@ -120,7 +84,7 @@ class _MainPageState extends State<MainPage> {
               const SizedBox(height: kPadding), // Spacing between sections
               // Section 3 - Blog
               BuildSection(
-                color: Colors.blue[500]!,
+                color: kSecondarySectionPrimaryColor,
                 child: [
                   const Text(
                     'Section 3 - Part 3',

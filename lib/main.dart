@@ -15,10 +15,18 @@ class WebSite extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.white,
-        body: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 200.0, vertical: 80.0),
-            child: MainPage(),
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('../images/background.png'),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: SafeArea(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 200.0, vertical: 80.0),
+              child: MainPage(),
+            ),
           ),
         ),
       ),
