@@ -7,7 +7,10 @@ class RoundIconButton extends StatelessWidget {
     required this.icon,
     required this.color,
     this.iconSize = 28.0,
-    this.iconColor = Colors.black, // Default icon size
+    this.iconColor = Colors.black,
+    this.elevation = 0.0,
+    this.pWidth = 48.0,
+    this.pHeight = 48.0, // Default icon size
     super.key,
   });
   final IconData icon;
@@ -15,6 +18,9 @@ class RoundIconButton extends StatelessWidget {
   final Color iconColor; // Default icon color
   final Color color;
   final GestureTapCallback onPressed;
+  final double elevation;
+  final double pWidth;
+  final double pHeight;
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +28,8 @@ class RoundIconButton extends StatelessWidget {
       onPressed: onPressed,
       shape: CircleBorder(),
       fillColor: color,
-      constraints: BoxConstraints.tightFor(width: 48.0, height: 48.0),
-      elevation: 0.0,
+      constraints: BoxConstraints.tightFor(width: pWidth, height: pHeight),
+      elevation: elevation,
       child: FaIcon(icon, size: iconSize, color: iconColor),
     );
   }

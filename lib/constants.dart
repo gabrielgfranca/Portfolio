@@ -13,7 +13,7 @@ const kMainSectionQuinaryColor = Color(0xff36897E);
 // Secondary and Tertiary Section Colors
 const kSecondarySectionPrimaryColor = Color(0xff2D2D38);
 const kSecondarySectionSecondaryColor = Color(0xff1C1C25);
-const kSecondarySectionTertiaryColor = Color(0xff1C2026);
+const kSecondarySectionTertiaryColor = Color(0xff101016);
 const kSecondarySectionQuaternaryColor = Color(0xff948979);
 const kSecondarySectionQuinaryColor = Color(0xff686259);
 const kSecondarySectionSenaryColor = Color(0xffECB236);

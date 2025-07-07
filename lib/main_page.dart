@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'build_section.dart';
 import 'constants.dart';
 import 'Sections/main_section.dart';
+import 'Sections/portfolio_section.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -36,18 +37,8 @@ class _MainPageState extends State<MainPage> {
               ),
 
               const SizedBox(height: kPadding), // Spacing between sections
-              // Section 2 - Projects
-              BuildSection(
-                flex: 3,
-                color: kSecondarySectionPrimaryColor,
-                child: [
-                  const Text(
-                    'Section 2 - Part 2',
-                    style: TextStyle(color: Colors.white, fontSize: 24.0),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
+              // Section 2 - Portfolio
+              PortfolioSection(),
             ],
           ),
         ),

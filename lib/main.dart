@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'sections.dart';
+import 'main_page.dart';
 
 // 'Gabriel França'
 

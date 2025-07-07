@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import '../build_section.dart';
 import '../constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../Buttons/contact_me_button.dart';
 import '../Buttons/round_icon_button.dart';
 
 class MainSection extends StatelessWidget {
@@ -40,63 +39,60 @@ class MainSection extends StatelessWidget {
 
         Divider(color: kMainSectionTertiaryColor, thickness: 3.5),
 
-        Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: Stack(
-            alignment: Alignment.topCenter,
-            children: [
-              Container(
-                height: 215.0,
-                width: 280.0,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: kMainSectionTertiaryColor,
-                    width: 14.0,
-                  ),
-                  borderRadius: BorderRadius.circular(10.0),
-                  image: DecorationImage(
-                    image: AssetImage(''),
-                    //fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-
-              Positioned(
-                bottom: 0,
-                child: Container(
-                  height: 42.0,
-                  width: 295.0,
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 35.0,
+              vertical: 15.0,
+            ),
+            child: Stack(
+              alignment: Alignment.bottomCenter,
+              children: [
+                Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 10.0),
                   decoration: BoxDecoration(
-                    color: kMainSectionQuaternaryColor,
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(10.0),
-                      bottomRight: Radius.circular(10.0),
+                    border: Border.all(
+                      color: kMainSectionTertiaryColor,
+                      width: 14.0,
+                    ),
+                    borderRadius: BorderRadius.circular(10.0),
+                    image: DecorationImage(
+                      image: AssetImage(''),
+                      fit: BoxFit.cover,
                     ),
                   ),
-                  child: Center(
-                    child: Text(
-                      'M O B I L E   D E V E L O P E R',
-                      style: GoogleFonts.poppins(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.w800,
-                        color: kMainSectionQuinaryColor,
+                ),
+
+                Positioned(
+                  child: Container(
+                    height: 45.0,
+                    decoration: BoxDecoration(
+                      color: kMainSectionQuaternaryColor,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(10.0),
+                        bottomRight: Radius.circular(10.0),
+                      ),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'M O B I L E   D E V E L O P E R',
+                        style: GoogleFonts.poppins(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w800,
+                          color: kMainSectionQuinaryColor,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
 
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.only(
-              top: 14.0,
-              bottom: 14.0,
-              left: 45.0,
-              right: 45.0,
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 45.0),
             child: Container(
               decoration: BoxDecoration(
                 color: kMainSectionSecondaryColor,
@@ -106,39 +102,67 @@ class MainSection extends StatelessWidget {
             ),
           ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            RoundIconButton(
-              onPressed: () {},
-              icon: FontAwesomeIcons.linkedin,
-              iconColor: kMainSectionTertiaryColor,
-              color: kMainSectionSecondaryColor,
-            ),
-            const SizedBox(width: kPadding), // Spacing between buttons
-            RoundIconButton(
-              onPressed: () {},
-              icon: FontAwesomeIcons.github,
-              iconColor: kMainSectionTertiaryColor,
-              color: kMainSectionSecondaryColor,
-            ),
-            const SizedBox(width: kPadding), // Spacing between buttons
-            RoundIconButton(
-              onPressed: () {},
-              icon: FontAwesomeIcons.youtube,
-              iconColor: kMainSectionTertiaryColor,
-              color: kMainSectionSecondaryColor,
-            ),
-          ],
+        Padding(
+          padding: const EdgeInsets.only(top: 15.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              RoundIconButton(
+                onPressed: () {},
+                icon: FontAwesomeIcons.linkedin,
+                iconColor: kMainSectionTertiaryColor,
+                color: kMainSectionSecondaryColor,
+              ),
+              const SizedBox(width: kPadding), // Spacing between buttons
+              RoundIconButton(
+                onPressed: () {},
+                icon: FontAwesomeIcons.github,
+                iconColor: kMainSectionTertiaryColor,
+                color: kMainSectionSecondaryColor,
+              ),
+              const SizedBox(width: kPadding), // Spacing between buttons
+              RoundIconButton(
+                onPressed: () {},
+                icon: FontAwesomeIcons.youtube,
+                iconColor: kMainSectionTertiaryColor,
+                color: kMainSectionSecondaryColor,
+              ),
+            ],
+          ),
         ),
         Padding(
           padding: const EdgeInsets.only(
-            top: 14.0,
-            bottom: 42.0,
+            top: 15.0,
+            bottom: 45.0,
             left: 45.0,
             right: 45.0,
           ),
-          child: ContactMeButton(),
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: kMainSectionQuaternaryColor,
+              fixedSize: const Size(242, 42),
+              elevation: 6.0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(kCornerRadius),
+              ),
+            ),
+            onPressed: () {},
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'C O N T A C T   M E !',
+                  style: GoogleFonts.poppins(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w800,
+                    color: kMainSectionQuinaryColor,
+                  ),
+                ),
+                const SizedBox(width: 10.0), // Spacing between text and icon
+                Icon(Icons.email, color: kMainSectionQuinaryColor, size: 28.0),
+              ],
+            ),
+          ),
         ),
       ],
     );
