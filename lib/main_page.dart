@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'Sections/softskills_section.dart';
 import 'build_section.dart';
 import 'constants.dart';
 import 'Sections/main_section.dart';
 import 'Sections/portfolio_section.dart';
+import 'Sections/blog_section.dart';
+import 'Sections/education_section.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -47,43 +50,11 @@ class _MainPageState extends State<MainPage> {
           flex: 1,
           child: Column(
             children: [
-              // Section 3 - Education
-              BuildSection(
-                color: kSecondarySectionPrimaryColor,
-                child: [
-                  const Text(
-                    'Section 3 - Part 1',
-                    style: TextStyle(color: Colors.white, fontSize: 24.0),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
-
+              SoftskillsSection(),
               const SizedBox(height: kPadding), // Spacing between sections
-              // Section 3 - Experience
-              BuildSection(
-                color: kSecondarySectionPrimaryColor,
-                child: [
-                  const Text(
-                    'Section 3 - Part 2',
-                    style: TextStyle(color: Colors.white, fontSize: 24.0),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
-
+              BlogSection(),
               const SizedBox(height: kPadding), // Spacing between sections
-              // Section 3 - Blog
-              BuildSection(
-                color: kSecondarySectionPrimaryColor,
-                child: [
-                  const Text(
-                    'Section 3 - Part 3',
-                    style: TextStyle(color: Colors.white, fontSize: 24.0),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
+              EducationSection(),
             ],
           ),
         ),

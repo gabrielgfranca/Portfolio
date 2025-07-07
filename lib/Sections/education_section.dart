@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../build_section.dart';
 import '../constants.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../Buttons/round_icon_button.dart';
 
-class PortfolioSection extends StatelessWidget {
-  const PortfolioSection({super.key});
+class EducationSection extends StatelessWidget {
+  const EducationSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BuildSection(
-      flex: 3,
       color: kSecondarySectionPrimaryColor,
       child: [
         Expanded(
@@ -19,7 +17,7 @@ class PortfolioSection extends StatelessWidget {
             children: [
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.all(25.0),
+                  padding: const EdgeInsets.all(15.0),
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.0),
@@ -29,30 +27,31 @@ class PortfolioSection extends StatelessWidget {
                     child: Row(
                       children: [
                         const SizedBox(
-                          width: 45.0,
-                        ), // Spacing between icon and Container Borders
+                          width: 24.0,
+                        ), // Spacing between icon and Container Border
                         Icon(
-                          FontAwesomeIcons.image,
-                          size: 25.0,
-                          color: kSecondarySectionSenaryColor,
+                          FontAwesomeIcons.graduationCap,
+                          size: 20.0,
+                          color: kMainSectionPrimaryColor,
                         ),
                         const SizedBox(
-                          width: 25.0,
+                          width: 16.0,
                         ), // Spacing between icon and text
                         Text(
-                          'PORTFOLIO',
+                          'EDUCATION',
                           style: TextStyle(
-                            fontSize: 18.0,
+                            fontSize: 14.0,
                             fontWeight: FontWeight.w800,
                             color: Colors.white,
                           ),
-                        ),
+                        ), // Spacing between dots and end of container
+
                         const Spacer(), // Pushes the dots to the right
                         Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Row(
-                              children: List.generate(6, (index) {
+                              children: List.generate(4, (index) {
                                 return Padding(
                                   padding: const EdgeInsets.symmetric(
                                     horizontal: 4.0,
@@ -69,7 +68,7 @@ class PortfolioSection extends StatelessWidget {
                               height: 10.0,
                             ), // Spacing between rows
                             Row(
-                              children: List.generate(6, (index) {
+                              children: List.generate(4, (index) {
                                 return Padding(
                                   padding: const EdgeInsets.symmetric(
                                     horizontal: 4.0,
@@ -84,51 +83,29 @@ class PortfolioSection extends StatelessWidget {
                             ),
                           ],
                         ),
-                        const SizedBox(
-                          width: 25.0,
-                        ), // Spacing between dots and end of container
+                        const SizedBox(width: 25.0),
                       ],
                     ),
                   ),
                 ),
               ),
-              RoundIconButton(
-                onPressed: () {},
-                pHeight: 60.0,
-                pWidth: 60.0,
-                icon: FontAwesomeIcons.arrowLeft,
-                color: kSecondarySectionPrimaryColor,
-                iconColor: Colors.white,
-                elevation: 4.0,
-              ),
-              const SizedBox(width: 25.0), // Spacing between buttons
-              RoundIconButton(
-                onPressed: () {},
-                pHeight: 60.0,
-                pWidth: 60.0,
-                icon: FontAwesomeIcons.arrowRight,
-                color: kSecondarySectionPrimaryColor,
-                iconColor: Colors.white,
-                elevation: 6.0,
-              ),
-              const SizedBox(width: 25.0), // Spacing between button eand Border
             ],
           ),
         ),
 
         Expanded(
-          flex: 3,
+          flex: 2,
           child: Padding(
             padding: const EdgeInsets.only(
-              left: 25.0,
-              right: 25.0,
-              bottom: 25.0,
+              left: 15.0,
+              right: 15.0,
+              bottom: 15.0,
             ),
             child: Container(
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: kSecondarySectionTertiaryColor,
-                  width: 16.0,
+                  color: kSecondarySectionSecondaryColor,
+                  width: 12.0,
                 ),
                 borderRadius: BorderRadius.circular(10.0),
                 image: DecorationImage(
