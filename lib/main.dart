@@ -24,7 +24,7 @@ class WebSite extends StatelessWidget {
           ),
           child: SafeArea(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 200.0, vertical: 80.0),
+              padding: EdgeInsets.symmetric(horizontal: 250.0, vertical: 80.0),
               child: MainPage(),
             ),
           ),

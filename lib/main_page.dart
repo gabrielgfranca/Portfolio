@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'Sections/softskills_section.dart';
-import 'build_section.dart';
 import 'constants.dart';
 import 'Sections/main_section.dart';
 import 'Sections/portfolio_section.dart';
 import 'Sections/blog_section.dart';
 import 'Sections/education_section.dart';
+import 'Sections/devtools_section.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -26,21 +26,8 @@ class _MainPageState extends State<MainPage> {
           flex: 2,
           child: Column(
             children: [
-              // Section 2 - DevTools
-              BuildSection(
-                flex: 1,
-                color: kSecondarySectionPrimaryColor,
-                child: [
-                  const Text(
-                    'Section 2 - Part 1',
-                    style: TextStyle(color: Colors.white, fontSize: 24.0),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
-
+              DevtoolsSection(),
               const SizedBox(height: kPadding), // Spacing between sections
-              // Section 2 - Portfolio
               PortfolioSection(),
             ],
           ),

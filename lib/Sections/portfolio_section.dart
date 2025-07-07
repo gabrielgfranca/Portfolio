@@ -10,7 +10,7 @@ class PortfolioSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BuildSection(
-      flex: 3,
+      flex: 4,
       color: kSecondarySectionPrimaryColor,
       child: [
         Expanded(
