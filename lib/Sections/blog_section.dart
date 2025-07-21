@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../build_section.dart';
-import '../constants.dart';
+import '../utilities/build_section.dart';
+import '../utilities/constants.dart';
 
 class BlogSection extends StatelessWidget {
   const BlogSection({super.key});

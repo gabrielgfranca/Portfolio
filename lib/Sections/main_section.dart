@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../build_section.dart';
-import '../constants.dart';
+import '../utilities/build_section.dart';
+import '../utilities/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../Buttons/round_icon_button.dart';
+import '../utilities/round_icon_button.dart';
+import 'package:url_launcher/url_launcher.dart';
+import '../utilities/send_email.dart';
 
 class MainSection extends StatelessWidget {
   const MainSection({super.key});
@@ -75,9 +77,9 @@ class MainSection extends StatelessWidget {
                     ),
                     child: Center(
                       child: Text(
-                        'M O B I L E   D E V E L O P E R',
+                        'B A C K - E N D   D E V E L O P E R',
                         style: GoogleFonts.poppins(
-                          fontSize: 20.0,
+                          fontSize: 16.0,
                           fontWeight: FontWeight.w800,
                           color: kMainSectionQuinaryColor,
                         ),
@@ -108,21 +110,42 @@ class MainSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               RoundIconButton(
-                onPressed: () {},
+                onPressed: () async {
+                  final url = Uri.parse(linkedinUrl);
+                  if (await canLaunchUrl(url)) {
+                    await launchUrl(url, mode: LaunchMode.externalApplication);
+                  } else {
+                    throw 'Could not launch $url';
+                  }
+                },
                 icon: FontAwesomeIcons.linkedin,
                 iconColor: kMainSectionTertiaryColor,
                 color: kMainSectionSecondaryColor,
               ),
               const SizedBox(width: kPadding), // Spacing between buttons
               RoundIconButton(
-                onPressed: () {},
+                onPressed: () async {
+                  final url = Uri.parse(githubUrl);
+                  if (await canLaunchUrl(url)) {
+                    await launchUrl(url, mode: LaunchMode.externalApplication);
+                  } else {
+                    throw 'Could not launch $url';
+                  }
+                },
                 icon: FontAwesomeIcons.github,
                 iconColor: kMainSectionTertiaryColor,
                 color: kMainSectionSecondaryColor,
               ),
               const SizedBox(width: kPadding), // Spacing between buttons
               RoundIconButton(
-                onPressed: () {},
+                onPressed: () async {
+                  final url = Uri.parse(youtubeUrl);
+                  if (await canLaunchUrl(url)) {
+                    await launchUrl(url, mode: LaunchMode.externalApplication);
+                  } else {
+                    throw 'Could not launch $url';
+                  }
+                },
                 icon: FontAwesomeIcons.youtube,
                 iconColor: kMainSectionTertiaryColor,
                 color: kMainSectionSecondaryColor,
@@ -138,6 +161,12 @@ class MainSection extends StatelessWidget {
             right: 45.0,
           ),
           child: ElevatedButton(
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) => const SendEmail(),
+              );
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: kMainSectionQuaternaryColor,
               fixedSize: const Size(242, 42),
@@ -146,7 +175,6 @@ class MainSection extends StatelessWidget {
                 borderRadius: BorderRadius.circular(kCornerRadius),
               ),
             ),
-            onPressed: () {},
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

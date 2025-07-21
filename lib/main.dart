@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'main_page.dart';
+import 'website_builder.dart';
 
 // 'Gabriel França'
 
@@ -25,7 +25,7 @@ class WebSite extends StatelessWidget {
           child: SafeArea(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 250.0, vertical: 80.0),
-              child: MainPage(),
+              child: WebSiteBuilder(),
             ),
           ),
         ),

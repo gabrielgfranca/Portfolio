@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'Sections/softskills_section.dart';
-import 'constants.dart';
+import 'utilities/constants.dart';
 import 'Sections/main_section.dart';
 import 'Sections/portfolio_section.dart';
 import 'Sections/blog_section.dart';
-import 'Sections/education_section.dart';
 import 'Sections/devtools_section.dart';
+import 'Sections/experience.dart';
 
-class MainPage extends StatefulWidget {
-  const MainPage({super.key});
+class WebSiteBuilder extends StatefulWidget {
+  const WebSiteBuilder({super.key});
 
   @override
-  State<MainPage> createState() => _MainPageState();
+  State<WebSiteBuilder> createState() => _WebSiteBuilderState();
 }
 
-class _MainPageState extends State<MainPage> {
+class _WebSiteBuilderState extends State<WebSiteBuilder> {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -39,9 +39,9 @@ class _MainPageState extends State<MainPage> {
             children: [
               SoftskillsSection(),
               const SizedBox(height: kPadding), // Spacing between sections
-              BlogSection(),
+              Experience(),
               const SizedBox(height: kPadding), // Spacing between sections
-              EducationSection(),
+              BlogSection(),
             ],
           ),
         ),

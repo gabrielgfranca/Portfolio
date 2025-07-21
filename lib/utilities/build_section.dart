@@ -8,6 +8,7 @@ class BuildSection extends StatelessWidget {
     this.alignment = MainAxisAlignment.center,
     this.flex = 1,
     super.key,
+    s,
   });
   final Color color;
   final List<Widget> child;

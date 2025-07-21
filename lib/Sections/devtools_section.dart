@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../build_section.dart';
-import '../constants.dart';
-import 'package:marquee_widget/marquee_widget.dart';
+import '../utilities/build_section.dart';
+import '../utilities/constants.dart';
+import 'package:infinite_carousel/infinite_carousel.dart';
 
 class DevtoolsSection extends StatefulWidget {
   const DevtoolsSection({super.key});
@@ -11,18 +11,27 @@ class DevtoolsSection extends StatefulWidget {
 }
 
 class _DevtoolsSectionState extends State<DevtoolsSection> {
-  final logos = [flutterLogo, dartLogo, kotlinLogo, pythonLogo, cLogo];
-  List<Widget> repeatWidgets(List<Widget> list, int times) {
-    return List.filled(times, list)
-        .expand(
-          (e) => e.map(
-            (item) => Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18.0),
-              child: item,
-            ),
-          ),
+  final logos = [python, java, rust, c];
+  final _controller = InfiniteScrollController();
+
+  void startMarqueeLoop() {
+    _controller
+        .animateTo(
+          _controller.offset + 10000,
+          duration: const Duration(seconds: 150),
+          curve: Curves.linear,
         )
-        .toList();
+        .then((_) {
+          startMarqueeLoop();
+        });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      startMarqueeLoop();
+    });
   }
 
   @override
@@ -44,26 +53,30 @@ class _DevtoolsSectionState extends State<DevtoolsSection> {
                       color: kSecondarySectionSecondaryColor,
                       borderRadius: BorderRadius.circular(10.0),
                     ),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Marquee(
-                            direction: Axis.horizontal,
-                            directionMarguee: DirectionMarguee.oneDirection,
-                            autoRepeat: true,
-                            animationDuration: const Duration(seconds: 15),
-                            backDuration: Duration.zero,
-                            pauseDuration: Duration.zero,
-                            child: SizedBox(
-                              width: 1000,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: repeatWidgets(logos, 2),
-                              ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: InfiniteCarousel.builder(
+                              itemCount: logos.length,
+                              itemExtent: 100.0,
+                              axisDirection: Axis.horizontal,
+                              loop: true,
+                              velocityFactor: 0.1,
+                              controller: _controller,
+                              itemBuilder: (context, index, realIndex) {
+                                return Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 16.0,
+                                  ),
+                                  child: logos[index],
+                                );
+                              },
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),

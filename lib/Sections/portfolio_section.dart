@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../build_section.dart';
-import '../constants.dart';
+import '../utilities/build_section.dart';
+import '../utilities/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../Buttons/round_icon_button.dart';
+import '../utilities/round_icon_button.dart';
 
 class PortfolioSection extends StatelessWidget {
   const PortfolioSection({super.key});
