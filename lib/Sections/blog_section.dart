@@ -64,23 +64,6 @@ class BlogSection extends StatelessWidget {
                                 );
                               }),
                             ),
-                            const SizedBox(
-                              height: 10.0,
-                            ), // Spacing between rows
-                            Row(
-                              children: List.generate(4, (index) {
-                                return Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 4.0,
-                                  ),
-                                  child: const CircleAvatar(
-                                    radius: 4.0,
-                                    backgroundColor:
-                                        kSecondarySectionPrimaryColor,
-                                  ),
-                                );
-                              }),
-                            ),
                           ],
                         ),
                         const SizedBox(width: 25.0),

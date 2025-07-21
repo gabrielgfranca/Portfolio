@@ -30,17 +30,54 @@ class SendEmail extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: Row(
                       children: [
-                        const SizedBox(width: 24.0),
-                        Icon(Icons.mail, size: 32.0, color: Colors.white),
+                        const SizedBox(width: 20.0),
+                        Container(
+                          height: 50.0,
+                          width: 50.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8.0),
+                            color: kSecondarySectionSecondaryColor,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.mail,
+                                size: 24.0,
+                                color: kSecondarySectionSenaryColor,
+                              ),
+                            ],
+                          ),
+                        ),
                         const SizedBox(width: 16.0),
                         Text(
                           'GABRIELGFRANCA7@GMAIL.COM',
                           style: GoogleFonts.poppins(
-                            fontSize: 18.0,
+                            fontSize: 14.0,
                             fontWeight: FontWeight.w800,
                             color: Colors.white,
                           ),
                         ),
+                        const Spacer(), // Pushes the dots to the right
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Row(
+                              children: List.generate(4, (index) {
+                                return Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 4.0,
+                                  ),
+                                  child: const CircleAvatar(
+                                    radius: 4.0,
+                                    backgroundColor: kMainSectionTertiaryColor,
+                                  ),
+                                );
+                              }),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(width: 25.0),
                       ],
                     ),
                   ),

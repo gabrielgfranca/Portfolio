@@ -18,7 +18,7 @@ class Experience extends StatelessWidget {
                 RawMaterialButton(
                   onPressed: () {},
                   shape: CircleBorder(),
-                  fillColor: kMainSectionPrimaryColor,
+                  fillColor: kMainSectionSecondaryColor,
                   constraints: BoxConstraints.tightFor(
                     width: 124.0,
                     height: 124.0,
